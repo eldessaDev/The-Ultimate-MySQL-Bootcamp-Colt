@@ -1,0 +1,5 @@
+-- DELETE ALL DATA IN A TABLE
+    DELETE FROM employees;
+
+-- DELETE A SINGLE ROW
+    DELETE FROM cats WHERE name='Egg';
