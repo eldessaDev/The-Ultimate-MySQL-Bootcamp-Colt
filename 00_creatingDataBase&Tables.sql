@@ -1,3 +1,5 @@
+SELECT version();
+
 SHOW DATABASES;
 USE <database name>;
 

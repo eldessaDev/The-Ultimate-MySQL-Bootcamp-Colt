@@ -21,3 +21,32 @@
 
     -- DELETE VIEW
     DROP VIEW ORDERED_SERIES;
+
+    -- HAVING
+    SELECT TITLE, avg(RATING), count(rating) as Review_Count
+    FROM FULL_REVIEWS
+    GROUP BY TITLE
+    HAVING count(RATING) > 1;
+
+    -- WITH ROLLUP
+    SELECT TITLE, avg(RATING), count(rating) as Review_Count
+    FROM FULL_REVIEWS
+    GROUP BY TITLE
+    HAVING count(RATING) > 1;
+
+    SELECT TITLE, AVG(RATING) 
+    FROM FULL_REVIEWS
+    GROUP BY TITLE WITH ROLLUP;
+
+    SELECT RELEASED_YEAR, GENRE, AVG(RATING)
+    FROM FULL_REVIEWS
+    GROUP BY RELEASED_YEAR, GENRE WITH ROLLUP;
+
+-- MODES
+    -- To View Modes:
+    SELECT @@GLOBAL.sql_mode;
+    SELECT @@SESSION.sql_mode;
+    
+    -- To Set Them:
+    SET GLOBAL sql_mode = 'modes';
+    SET SESSION sql_mode = 'modes';
